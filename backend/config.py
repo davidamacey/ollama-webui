@@ -35,6 +35,14 @@ FRONTEND_BUILD_DIR = str(Path(os.getenv("FRONTEND_BUILD_DIR", "../build")))
 UPLOAD_DIR = f"{DATA_DIR}/uploads"
 Path(UPLOAD_DIR).mkdir(parents=True, exist_ok=True)
 
+
+####################################
+# Cache DIR
+####################################
+
+CACHE_DIR = f"{DATA_DIR}/cache"
+Path(CACHE_DIR).mkdir(parents=True, exist_ok=True)
+
 ####################################
 # OLLAMA_API_BASE_URL
 ####################################
@@ -62,6 +70,7 @@ if OPENAI_API_BASE_URL == "":
 # WEBUI
 ####################################
 
+ENABLE_SIGNUP = os.environ.get("ENABLE_SIGNUP", True)
 DEFAULT_MODELS = os.environ.get("DEFAULT_MODELS", None)
 DEFAULT_PROMPT_SUGGESTIONS = os.environ.get(
     "DEFAULT_PROMPT_SUGGESTIONS",
